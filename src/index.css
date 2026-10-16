@@ -1,0 +1,461 @@
+/* ==========================================================================
+   A1 FAMILY RESTAURANT — MIDNIGHT ATELIER DESIGN SYSTEM
+   Refined Architectural Luxury Tokens
+   ========================================================================== */
+
+:root {
+  /* Midnight Atelier Color Tokens */
+  --bg-primary: #0A0A0C;
+  --bg-secondary: #101014;
+  --surface-elevated: #17171C;
+  --surface-raised: #202027;
+  --surface-hover: #26262F;
+
+  --accent-gold: #D2AC68;
+  --accent-gold-soft: #E8CA91;
+  --accent-gold-deep: #A07F3E;
+  --accent-glow: rgba(210, 172, 104, 0.12);
+  --accent-border: rgba(210, 172, 104, 0.28);
+  --divider-subtle: rgba(210, 172, 104, 0.22);
+
+  --text-main: #F5F0E7;
+  --text-secondary: #B0AAA1;
+  --text-muted: #817C77;
+  --text-dim: #5A5652;
+
+  --border-subtle: #302E31;
+  --border-light: rgba(245, 240, 231, 0.06);
+  --border-gold: rgba(210, 172, 104, 0.35);
+
+  --success: #70C69A;
+  --success-bg: rgba(112, 198, 154, 0.1);
+  --error: #F08A83;
+  --error-bg: rgba(240, 138, 131, 0.1);
+
+  /* Typography */
+  --font-display: 'Cinzel', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Architectural Radii (Restrained & Deliberate) */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 9999px;
+
+  /* Layout & Elevations */
+  --max-width: 1240px;
+  --header-height: 80px;
+
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.65);
+  --shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.85);
+
+  --transition-fast: 160ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 260ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Tabular Numerals for Prices & Stats */
+.num-tabular {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+/* Custom Minimal Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+/* Typography Utilities */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Accessible Focus States & Skip Link */
+:focus-visible {
+  outline: 2px solid var(--accent-gold-soft);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  background: var(--accent-gold);
+  color: #0A0A0C;
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  z-index: 9999;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 20px;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 36px;
+    padding-right: 36px;
+  }
+}
+
+/* Section Spacing */
+.section-padding {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+@media (min-width: 992px) {
+  .section-padding {
+    padding-top: 128px;
+    padding-bottom: 128px;
+  }
+}
+
+/* Section Header Editorial Style */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 56px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 16px;
+}
+
+.eyebrow::before,
+.eyebrow::after {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--accent-gold);
+  opacity: 0.45;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  line-height: 1.2;
+  margin-bottom: 18px;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.section-subtitle {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* Architectural Button Treatments */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 26px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  text-align: center;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Primary Architectural Gold Action */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-deep) 100%);
+  color: #0A0A0C;
+  border: 1px solid var(--accent-gold-soft);
+  box-shadow: 0 4px 16px rgba(210, 172, 104, 0.2);
+  font-weight: 700;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--accent-gold-soft) 0%, var(--accent-gold) 100%);
+  box-shadow: 0 6px 24px rgba(210, 172, 104, 0.35);
+  transform: translateY(-2px);
+}
+
+/* WhatsApp Order Action */
+.btn-whatsapp {
+  background: #25D366;
+  color: #06190E;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.2);
+}
+
+.btn-whatsapp:hover {
+  background: #20BA5A;
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.32);
+  transform: translateY(-2px);
+}
+
+/* Clean Editorial Outline */
+.btn-outline {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-subtle);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold-soft);
+  background: var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Gold Outline */
+.btn-gold-outline {
+  background: rgba(210, 172, 104, 0.04);
+  color: var(--accent-gold-soft);
+  border: 1px solid var(--accent-border);
+}
+
+.btn-gold-outline:hover {
+  background: var(--accent-gold);
+  color: #0A0A0C;
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(210, 172, 104, 0.25);
+}
+
+/* Elevated Surface Card Styles */
+.card-surface {
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-normal);
+  overflow: hidden;
+}
+
+.card-surface:hover {
+  border-color: var(--border-gold);
+  background-color: var(--surface-raised);
+  box-shadow: var(--shadow-card);
+}
+
+/* Fine Decorative Accent Badges */
+.badge-gold {
+  background: rgba(210, 172, 104, 0.1);
+  color: var(--accent-gold-soft);
+  border: 1px solid var(--accent-border);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 3px 9px;
+  border-radius: var(--radius-xs);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.badge-sample {
+  background: rgba(232, 202, 145, 0.08);
+  color: var(--accent-gold-soft);
+  border: 1px solid rgba(232, 202, 145, 0.25);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: var(--radius-xs);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Veg / Non-Veg Indicator */
+.diet-indicator {
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.diet-indicator.veg {
+  border: 1.5px solid #22C55E;
+}
+
+.diet-indicator.veg::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: #22C55E;
+  border-radius: 50%;
+}
+
+.diet-indicator.non-veg {
+  border: 1.5px solid #EF4444;
+}
+
+.diet-indicator.non-veg::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 3.5px solid transparent;
+  border-right: 3.5px solid transparent;
+  border-bottom: 6px solid #EF4444;
+}
+
+.diet-indicator.egg {
+  border: 1.5px solid #F59E0B;
+}
+
+.diet-indicator.egg::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: #F59E0B;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.diet-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.diet-label.veg {
+  color: #22C55E;
+}
+
+.diet-label.non-veg {
+  color: #EF4444;
+}
+
+.diet-label.egg {
+  color: #F59E0B;
+}
+
+/* Dish Card Media Presentation */
+.dish-card-media {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  background-color: #121216;
+}
+
+.dish-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-surface:hover .dish-card-image {
+  transform: scale(1.06);
+}
+
+.dish-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 10, 12, 0.45) 0%, transparent 40%, rgba(10, 10, 12, 0.85) 100%);
+  pointer-events: none;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

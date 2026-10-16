@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0C674"/>
+      <stop offset="50%" stop-color="#D4A853"/>
+      <stop offset="100%" stop-color="#A67B28"/>
+    </linearGradient>
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B1B20"/>
+      <stop offset="100%" stop-color="#0B0B0D"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#darkGrad)"/>
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" stroke-opacity="0.8"/>
+  <circle cx="32" cy="32" r="23" fill="none" stroke="url(#goldGrad)" stroke-width="1" stroke-dasharray="2 2" stroke-opacity="0.5"/>
+  <text x="32" y="40" font-family="'Cinzel', Georgia, serif" font-size="24" font-weight="800" fill="url(#goldGrad)" text-anchor="middle" letter-spacing="0.5">A1</text>
+</svg>
